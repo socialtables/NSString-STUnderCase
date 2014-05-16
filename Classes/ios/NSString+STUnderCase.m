@@ -32,7 +32,7 @@
     char *orig = (char *)[self UTF8String];
 
     size_t len = strlen(orig);
-    size_t maxlen = ((sizeof(*orig) * length) + 1);
+    size_t maxlen = ((sizeof(*orig) * len) + 1);
 
     // We need to work off a copy that uses memory *we* own, so we have to
     // allocate it ourselves
@@ -46,8 +46,8 @@
 
     char *word = NULL;
     int firstword = 1;
-    int wordlen = 0;
-    int newlen = 0;
+    size_t wordlen = 0;
+    size_t newlen = 0;
 
     for (word = strsep(&src, "_"); word != NULL; word = strsep(&src, "_")) {
         if ((option == STUnderCaseOptionClass) || (!firstword)) {
@@ -65,7 +65,7 @@
     // Now create the result NSString -- note this is owned by ARC
     NSString *result = [[NSString alloc] initWithBytes:dst length:newlen encoding:NSUTF8StringEncoding];
     // Don't forget to free allocated memory!
-    free(dst); free(cpy);
+    free(dst); free(src);
     return result;
 }
 
