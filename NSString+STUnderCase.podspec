@@ -15,6 +15,10 @@ Pod::Spec.new do |s|
                        (like in Objective-C attributes) to `underscore_case` (like in JSON API calls
                        or database fields) and vice versa.
 
+                       Note that this does simple byte-string manipulation and will not do the right
+                       thing with non-ASCII strings. Since it's mostly working with keys / attribute
+                       names, this isn't that much of an issue since they're usually simple ASCII.
+
                        ## why
 
                        At Social Tables, our app does a fair bit of talking to an API and marshaling
