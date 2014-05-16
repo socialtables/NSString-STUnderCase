@@ -1,4 +1,4 @@
-# STUnderCase CHANGELOG
+# NSString+STUnderCase CHANGELOG
 
 ## 0.1.0
 

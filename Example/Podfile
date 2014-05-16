@@ -1,4 +1,4 @@
-pod "STUnderCase", :path => "../"
+pod "NSString+STUnderCase", :path => "../"
 
 target "Demo" do
 end
