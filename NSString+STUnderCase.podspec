@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
   # s.osx.deployment_target = '10.7'
   s.requires_arc = true
 
-  s.source_files = 'Classes/**/*.m'
+  s.source_files = 'Classes/**/*.{h,m}'
   # s.resources = 'Assets/*.png'
 
   s.ios.exclude_files = 'Classes/osx'
